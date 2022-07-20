@@ -4,17 +4,103 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Raleway:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
+    <style>
+      :root {
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd9b2;
+        --white: #ffffff;
+        --black: #000000;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+      }
+
+      body {
+        font-family: "Quicksand", sans-serif;
+        margin: 0;
+      }
+      .login {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .form-container {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        width: 300px;
+      }
+      .logo {
+        width: 150px;
+        margin-bottom: 48px;
+        justify-self: center;
+        display: none;
+      }
+      .title {
+        font-size: var(--lg);
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .subtitle {
+        font-size: var(--md);
+        color: var(--very-light-pink);
+        font-weight: 300;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 32px;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+      }
+      .label {
+        font-size: var(--sm);
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+      .input {
+        background-color: var(--text-input-field);
+        border: none;
+        border-radius: 8px;
+        height: 30px;
+        font-size: var(--md);
+        padding: 6px;
+        margin-bottom: 16px;
+      }
+      .primary-button {
+        width: 100%;
+        height: 50px;
+        cursor: pointer;
+        border-style: none;
+        border-radius: 8px;
+        background-color: var(--hospital-green);
+        font-size: var(--sm);
+        font-weight: bold;
+        color: var(--white);
+      }
+      .login-button{
+        margin-top: 14px;
+        margin-bottom: 30px;
+      }
+    </style>
   </head>
   <body>
     <!--contenedor general -->
     <div class="login">
-        <!-- Contenedor para poner todos los elementos -->
+      <!-- Contenedor para poner todos los elementos -->
       <div class="form-container">
-        <img src="" alt="logo" />
+        <img class="logo" src="./Logos/logo_yard_sale.svg" alt="logo" />
         <h1 class="title">Create a new password</h1>
         <p class="subtitle">Enter a new password for your account</p>
-        <form action="/">
+        <form action="/" class="form">
           <label for="password" class="label">Password</label>
           <input
             type="password"
@@ -33,7 +119,11 @@
             placeholder="********"
           />
 
-          <input type="submit" value="Confirm" />
+          <input
+            type="submit"
+            value="Confirm a new password"
+            class="primary-button login-button"
+          />
         </form>
       </div>
     </div>
