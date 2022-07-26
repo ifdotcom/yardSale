@@ -5,76 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <style>
-    :root {
-      --very-light-pink: #c7c7c7;
-      --text-input-field: #f7f7f7;
-      --hospital-green: #acd9b2;
-      --white: #ffffff;
-      --black: #000000;
-      --sm: 14px;
-      --md: 16px;
-      --lg: 18px;
-    }
+    <style>
+      :root {
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd9b2;
+        --white: #ffffff;
+        --black: #000000;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+      }
 
-    body {
-      font-family: "Quicksand", sans-serif;
-      margin: 0;
-    }
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fill,
-        240px
-      ); /* auto-fill-> ocupa el espacio disponible*/
-      gap: 20px;
-      place-content: center;
-    }
-    .card {
-      width: 240px; /* el contenedor de cada carda tendra un ancho de 240px */
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      border-radius: 20px;
-      object-fit: cover;
-    }
-    .card-items {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .card-items figure img {
-      width: 35px;
-      height: 35px;
-    }
-    .card-items figure {
-      margin: 0;
-    }
-    .card-items div p:nth-child(1) {
-      font-weight: bold;
-      font-size: var(--md);
-      margin-bottom: 4px;
-    }
-    .card-items div p:nth-child(2) {
-      color: var(--very-light-pink);
-      font-size: var(--sm);
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-    @media (max-width: 640px) {
+      body {
+        font-family: "Quicksand", sans-serif;
+        margin: 0;
+      }
       .cards-container {
-        grid-template-columns: repeat(auto-fill, 140px);
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          240px
+        ); /* auto-fill-> ocupa el espacio disponible*/
+        gap: 20px;
+        place-content: center;
       }
       .card {
-        width: 140px; /* el contenedor de cada carda tendra un ancho de 240px */
+        width: 240px; /* el contenedor de cada carda tendra un ancho de 240px */
       }
       .card img {
-        width: 140px;
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        object-fit: cover;
       }
-    }
-  </style>
+      .card-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-items figure img {
+        width: 35px;
+        height: 35px;
+      }
+      .card-items figure {
+        margin: 0;
+      }
+      .card-items div p:nth-child(1) {
+        font-weight: bold;
+        font-size: var(--md);
+        margin-bottom: 4px;
+      }
+      .card-items div p:nth-child(2) {
+        color: var(--very-light-pink);
+        font-size: var(--sm);
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      @media (max-width: 640px) {
+        .cards-container {
+          grid-template-columns: repeat(auto-fill, 140px);
+        }
+        .card {
+          width: 140px; /* el contenedor de cada carda tendra un ancho de 240px */
+        }
+        .card img {
+          width: 140px;
+        }
+      }
+    </style>
+  </head>
+
   <body>
     <section class="cards">
       <div class="cards-container">
