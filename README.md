@@ -1,2 +1,2 @@
 # yardSale
-Proyecto para el curso de Fronten Developer en Platzi
+Proyecto para el curso de Frontend Developer en Platzi
