@@ -14,7 +14,7 @@ body {
   margin: 0;
 }
 
-.inactive{
+.inactive {
   display: none;
 }
 /* Estilos para navbar */
@@ -66,7 +66,7 @@ body {
   margin: 0 4px;
   border-radius: 12px;
 }
-.navbar ul li a:hover {
+.linkMenu:hover {
   color: var(--hospital-green);
 
   border: 1px solid var(--hospital-green);
@@ -93,8 +93,6 @@ body {
   top: -7px;
   right: -6px;
 }
-
-
 
 /* Estilos para el menu despegable del navbar*/
 .menu-desktop {
@@ -135,8 +133,47 @@ body {
   display: inline-block;
 }
 
+/* Estilos para el menu mobile */
+.menu-mobile {
+  position: absolute;
+  top: 69px;
+  padding: 16px;
+  height: auto;
+}
+.menu-mobile ul {
+  list-style: none;
+  margin: 24px 32px 0 32px;
+  padding: 0;
+}
 
+.menu-mobile ul:nth-child(1) {
+  border-bottom: 1px solid var(--very-light-pink);
+}
+.menu-mobile ul:nth-child(3) {
+  position: absolute;
+  /* bottom: 0; */
+}
+.menu-mobile ul:nth-child(3) li {
+  margin: 0;
+}
 
+.menu-mobile ul li {
+  margin-bottom: 28px;
+}
+.menu-mobile ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
+.menu-mobile .emailMenu {
+  color: var(--very-light-pink);
+  font-weight: 300;
+  font-size: var(--sm);
+}
+.menu-mobile .signOut {
+  color: var(--hospital-green);
+  font-size: var(--sm);
+}
 
 @media (max-width: 640px) {
   .menu {
@@ -148,5 +185,14 @@ body {
   }
   .email {
     display: none;
+  }
+  .menu-desktop{
+  display: none;
+  }
+}
+
+@media (min-width: 641px) {
+  .menu-mobile{
+  display: none;
   }
 }
