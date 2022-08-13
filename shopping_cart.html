@@ -40,6 +40,21 @@
         width: 360px;
         height: 100vh;
       }
+      .title-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .title-container img {
+        transform: rotate(180deg);
+        margin-right: 16px;
+        width: 20px;
+        height: 20px;
+      }
+      .title {
+        font-size: var(--md);
+        font-weight: bold;
+      }
       .order {
         display: grid;
         grid-template-columns: auto 1fr;
@@ -57,12 +72,11 @@
         font-weight: bold;
         font-size: var(--md);
       }
-     
+
       .order p:nth-child(2) {
         text-align: end;
         font-weight: bold;
         font-size: var(--md);
-
       }
 
       .my-order-product {
@@ -82,13 +96,12 @@
         height: 100px;
         border-radius: 20px;
       }
-        #close-icon{
+      #close-icon {
         width: 20px;
         height: 20px;
         margin: 0;
-        
       }
-      #close-icon:hover{
+      #close-icon:hover {
         cursor: pointer;
       }
       .my-order-product p:nth-child(2) {
@@ -98,7 +111,6 @@
       .my-order-product p:nth-child(3) {
         font-weight: bold;
         font-size: var(--lg);
-
       }
       .primary-button {
         display: flex;
@@ -114,17 +126,29 @@
         font-weight: bold;
         color: var(--white);
       }
-      .button-checkout{
+      .button-checkout {
         margin-bottom: 20px;
+      }
+
+      @media (min-width: 641px) {
+        .my-order-container {
+        position: absolute;
+        right: 0;
+        margin-right: 24px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="my-order">
+    <aside class="my-order">
       <div class="my-order-container">
+        <div class="title-container">
+          <img src="./Icons/flechita.svg" alt="" />
+
+          <p class="title">My orders</p>
+        </div>
 
         <div class="my-order-info">
-          
           <div class="my-order-product">
             <figure>
               <img
@@ -135,7 +159,7 @@
             <p>Cactus</p>
             <p>$50.00</p>
             <figure>
-                <img id="close-icon" src="./Icons/icon_close.png" alt="">
+              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
           </div>
           <div class="my-order-product">
@@ -148,7 +172,7 @@
             <p>Cactus</p>
             <p>$50.00</p>
             <figure>
-                <img id="close-icon" src="./Icons/icon_close.png" alt="">
+              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
           </div>
           <div class="my-order-product">
@@ -161,7 +185,7 @@
             <p>Cactus</p>
             <p>$50.00</p>
             <figure>
-                <img id="close-icon" src="./Icons/icon_close.png" alt="">
+              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
           </div>
           <div class="my-order-product">
@@ -174,7 +198,7 @@
             <p>Cactus</p>
             <p>$50.00</p>
             <figure>
-                <img id="close-icon" src="./Icons/icon_close.png" alt="">
+              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
           </div>
           <div class="my-order-product">
@@ -187,7 +211,7 @@
             <p>Cactus</p>
             <p>$50.00</p>
             <figure>
-                <img id="close-icon" src="./Icons/icon_close.png" alt="">
+              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
           </div>
           <div class="my-order-product">
@@ -200,22 +224,19 @@
             <p>Cactus</p>
             <p>$50.00</p>
             <figure>
-                <img id="close-icon" src="./Icons/icon_close.png" alt="">
+              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
           </div>
-          
+
           <div class="order">
             <p>
               <span>Total</span>
-            
             </p>
             <p>$ 560.00</p>
           </div>
-          <button class="primary-button button-checkout">
-         Checkout
-        </button>
+          <button class="primary-button button-checkout">Checkout</button>
         </div>
       </div>
-    </div>
+    </aside>
   </body>
 </html>
