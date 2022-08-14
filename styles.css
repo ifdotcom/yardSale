@@ -14,7 +14,6 @@ body {
   margin: 0;
 }
 
-
 /* Estilos para navbar */
 .navbar {
   display: flex;
@@ -152,8 +151,7 @@ body {
 }
 
 .menu-mobile ul:nth-child(3) li {
- margin: 4px 0;
-
+  margin: 4px 0;
 }
 
 .menu-mobile ul li {
@@ -182,7 +180,6 @@ body {
   background: var(--white);
 
   /* height: 100vh; */
-  
 }
 .my-order-container {
   display: grid;
@@ -201,7 +198,6 @@ body {
   margin-right: 16px;
   width: 20px;
   height: 20px;
-  
 }
 .title {
   font-size: var(--md);
@@ -284,6 +280,52 @@ body {
 .inactive {
   display: none;
 }
+
+/* productos inicio */
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    240px
+  ); /* auto-fill-> ocupa el espacio disponible*/
+  gap: 20px;
+  place-content: center;
+  margin-top: 36px;
+}
+.card {
+  width: 240px; /* el contenedor de cada carda tendra un ancho de 240px */
+}
+.card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.card-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-items figure img {
+  width: 35px;
+  height: 35px;
+}
+.card-items figure {
+  margin: 0;
+}
+.card-items div p:nth-child(1) {
+  font-weight: bold;
+  font-size: var(--md);
+  margin-bottom: 4px;
+}
+.card-items div p:nth-child(2) {
+  color: var(--very-light-pink);
+  font-size: var(--sm);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 @media (max-width: 640px) {
   .menu {
     display: block;
@@ -298,7 +340,16 @@ body {
   .menu-desktop {
     display: none;
   }
-
+  /* productos inicio */
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, 140px);
+  }
+  .card {
+    width: 140px; /* el contenedor de cada carda tendra un ancho de 240px */
+  }
+  .card img {
+    width: 140px;
+  }
 }
 
 @media (min-width: 641px) {
@@ -311,5 +362,3 @@ body {
     margin-right: 16px;
   }
 }
-
-
