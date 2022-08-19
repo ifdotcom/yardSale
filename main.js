@@ -164,13 +164,16 @@ function renderProductCart(arr) {
     priceProduct.innerHTML = `$ ${product.price}.00`;
     // suma de productos
     total.innerText =
-      "$" + (Number(total.innerText.substring(1)) + product.price) + '.00';
+      "$" + (Number(total.innerText.substring(1)) + product.price) + ".00";
 
     const figClose = document.createElement("figure");
     const imgClose = document.createElement("img");
     imgClose.setAttribute("src", "./Icons/icon_close.png");
 
     // notificacion de productos agregados
+    const countProduct = document.querySelector(".count-products");
+    countProduct.innerText = Number(countProduct.textContent) + arr.length;
+
 
     //  unir hijos
     orderInfo.appendChild(divOrder);
