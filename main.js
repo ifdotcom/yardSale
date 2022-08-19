@@ -1,3 +1,4 @@
+// Obtener los elementos del HTML
 const menuEmail = document.querySelector(".email");
 const menuDesktop = document.querySelector(".menu-desktop");
 const menuHamburger = document.querySelector(".menu");
@@ -12,14 +13,15 @@ const imgProduct = document.querySelector(".imgProduct");
 const closeDetails = document.querySelector(".close-detail");
 const orderInfo = document.querySelector(".my-order-info");
 const total = document.querySelector(".total");
-total.innerText = "$0.00";
 
+// Agregar evento click a los diferentes menús a mostrar y ocultar
 menuEmail.addEventListener("click", toggleMenuDesktop);
 menuHamburger.addEventListener("click", toggleMenuMobile);
 menuCart.addEventListener("click", toggleMenuCart);
 back.addEventListener("click", closeOrder);
 closeDetails.addEventListener("click", closeDetail);
 
+// Funciones para mostrar y ocultar el menú correspondiente
 function toggleMenuDesktop() {
   menuDesktop.classList.toggle("inactive");
   menuOrder.classList.add("inactive");
@@ -46,6 +48,7 @@ function closeDetail() {
   productDetails.classList.add("inactive");
 }
 
+// Crear un array para guardar productos
 const arrProducts = [];
 arrProducts.push({
   nameProduct: "Cactus",
@@ -78,10 +81,10 @@ arrProducts.push({
   priceProduct: 250,
 });
 
+// Función para renderizar en el inicio los productos -> recibe un array con todos los productos
 function renderProducts(arr) {
   arr.forEach((product) => {
     const cardContainer = document.querySelector(".cards-container");
-
     const cardProduct = document.createElement("div");
     cardProduct.classList.add("card");
 
@@ -89,11 +92,13 @@ function renderProducts(arr) {
     img.setAttribute("src", product.imgProduct);
     img.setAttribute("class", "product-img");
 
+    // Agegar evento click a la imagen para mostrar los detalles del producto
     img.addEventListener("click", () => {
       productDetails.classList.remove("inactive");
       menuOrder.classList.add("inactive");
       menuDesktop.classList.add("inactive");
 
+      // Ejecutar la funcion productDetail para enviarle los detalles del producto seleccionado
       productDetail(
         product.imgProduct,
         product.nameProduct,
@@ -101,13 +106,15 @@ function renderProducts(arr) {
       );
     });
 
+    // Crear los elementos para mostrar cada producto en el inicio
     const cardInfo = document.createElement("div");
-
     cardInfo.classList.add("card-items");
+
     const info = document.createElement("div");
 
     const price = document.createElement("p");
     price.innerText = `$${product.priceProduct}`;
+
     const name = document.createElement("p");
     name.innerText = `${product.nameProduct}`;
 
@@ -116,17 +123,20 @@ function renderProducts(arr) {
     const iconCart = document.createElement("img");
     iconCart.setAttribute("src", "./Icons/bt_add_to_cart.svg");
 
+    // Agregar el evento click al icono de gregar al carrito
     iconCart.addEventListener("click", () => {
+      // Por cada click guardar en un array la información del producto seleccionado
       const productSelected = [];
       productSelected.push({
         img: product.imgProduct,
         name: product.nameProduct,
         price: product.priceProduct,
       });
-
+      // Ejecutar la función renderProductCart para enviar la información del producto seleccionado
       renderProductCart(productSelected);
     });
 
+    // Unir los elementos para mostrarlos en el incio
     cardContainer.appendChild(cardProduct);
     cardProduct.appendChild(img);
     cardProduct.appendChild(cardInfo);
@@ -138,18 +148,17 @@ function renderProducts(arr) {
   });
 }
 
+// Función para mostrar la informacion detallada del producto
 function productDetail(img, name, price) {
-  console.log(img, name, price);
   imgProduct.setAttribute("src", img);
   nameProduct.innerText = name;
   priceProduct.innerText = `$${price}`;
 }
 
-// agregar productos al carrito -> cuando le de click al icono se agrega producto (img, precio, nombre)
-
+// Función para agregar productos al carrito -> recibe un array con la información del producto selccionado
 function renderProductCart(arr) {
   arr.forEach((product) => {
-    // crear elemento en el carrito
+    // Crear los elementos para mostrar el producto en el menú del carrito
     const divOrder = document.createElement("div");
     divOrder.classList.add("my-order-product");
 
@@ -162,25 +171,35 @@ function renderProductCart(arr) {
 
     const priceProduct = document.createElement("p");
     priceProduct.innerHTML = `$ ${product.price}.00`;
-    // suma de productos
+
+    // Mostrar el precio Total (substring() -> quita elementos de un stirng) -> '$0.00' substring(1) = quita $
+
     total.innerText =
       "$" + (Number(total.innerText.substring(1)) + product.price) + ".00";
 
     const figClose = document.createElement("figure");
     const imgClose = document.createElement("img");
     imgClose.setAttribute("src", "./Icons/icon_close.png");
+    imgClose.setAttribute("id", "close-icon");
 
-    // notificacion de productos agregados
+    // Sumar productos agregados al carrito y mostrar en la notificación
     const countProduct = document.querySelector(".count-products");
     countProduct.innerText = Number(countProduct.textContent) + arr.length;
 
-
-    //  unir hijos
+    // Eliminar producto del carrito
+    figClose.addEventListener("click", () => {
+      divOrder.remove();
+      total.innerText =
+        "$" + (Number(total.innerText.substring(1)) - product.price) + ".00";
+      countProduct.innerText = Number(countProduct.textContent) - arr.length;
+    });
+    //  Unir elementos
     orderInfo.appendChild(divOrder);
     divOrder.appendChild(figProduct);
     figProduct.appendChild(imgProduct);
     divOrder.appendChild(nameProduct);
     divOrder.appendChild(priceProduct);
+    divOrder.appendChild(figClose);
     figClose.appendChild(imgClose);
   });
 }
