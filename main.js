@@ -12,6 +12,7 @@ const imgProduct = document.querySelector(".imgProduct");
 const closeDetails = document.querySelector(".close-detail");
 const orderInfo = document.querySelector(".my-order-info");
 const total = document.querySelector(".total");
+total.innerText = "$0.00";
 
 menuEmail.addEventListener("click", toggleMenuDesktop);
 menuHamburger.addEventListener("click", toggleMenuMobile);
@@ -149,7 +150,6 @@ function productDetail(img, name, price) {
 function renderProductCart(arr) {
   arr.forEach((product) => {
     // crear elemento en el carrito
-
     const divOrder = document.createElement("div");
     divOrder.classList.add("my-order-product");
 
@@ -162,10 +162,15 @@ function renderProductCart(arr) {
 
     const priceProduct = document.createElement("p");
     priceProduct.innerHTML = `$ ${product.price}.00`;
+    // suma de productos
+    total.innerText =
+      "$" + (Number(total.innerText.substring(1)) + product.price) + '.00';
 
     const figClose = document.createElement("figure");
     const imgClose = document.createElement("img");
     imgClose.setAttribute("src", "./Icons/icon_close.png");
+
+    // notificacion de productos agregados
 
     //  unir hijos
     orderInfo.appendChild(divOrder);
