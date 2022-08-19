@@ -40,7 +40,7 @@
         <ul>
           <li><a href="/">My oders</a></li>
           <li><a href="/">My account</a></li>
-          <li><a href="/">Sign out</a></li>
+          <li><a href="./login.html">Sign out</a></li>
         </ul>
       </div>
       <div class="menu-mobile inactive">
@@ -59,20 +59,20 @@
         </ul>
         <ul>
           <li><a href="" class="emailMenu">example@example.com</a></li>
-          <li><a href="" class="signOut">Sign out</a></li>
+          <li><a href="./login.html" class="signOut">Sign out</a></li>
         </ul>
       </div>
     </nav>
     <aside class="my-order inactive">
       <div class="my-order-container">
         <div class="title-container">
-          <img src="./Icons/flechita.svg" alt="" />
+          <img class="back" src="./Icons/flechita.svg" alt="" />
 
           <p class="title">My orders</p>
         </div>
 
         <div class="my-order-info">
-          <div class="my-order-product">
+          <!-- <div class="my-order-product">
             <figure>
               <img
                 src="https://images.pexels.com/photos/5783396/pexels-photo-5783396.jpeg?cs=srgb&dl=pexels-anna-khomutova-5783396.jpg&fm=jpg"
@@ -84,56 +84,27 @@
             <figure>
               <img id="close-icon" src="./Icons/icon_close.png" alt="" />
             </figure>
-          </div>
-          <div class="my-order-product">
-            <figure>
-              <img
-                src="https://images.pexels.com/photos/5783396/pexels-photo-5783396.jpeg?cs=srgb&dl=pexels-anna-khomutova-5783396.jpg&fm=jpg"
-                alt="product"
-              />
-            </figure>
-            <p>Cactus</p>
-            <p>$50.00</p>
-            <figure>
-              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
-            </figure>
-          </div>
-          <div class="my-order-product">
-            <figure>
-              <img
-                src="https://images.pexels.com/photos/5783396/pexels-photo-5783396.jpeg?cs=srgb&dl=pexels-anna-khomutova-5783396.jpg&fm=jpg"
-                alt="product"
-              />
-            </figure>
-            <p>Cactus</p>
-            <p>$50.00</p>
-            <figure>
-              <img id="close-icon" src="./Icons/icon_close.png" alt="" />
-            </figure>
-          </div>
+          </div> -->
 
-          <div class="order">
-            <p>
-              <span>Total</span>
-            </p>
-            <p>$ 560.00</p>
-          </div>
-          <button class="primary-button button-checkout">Checkout</button>
         </div>
+        <div class="order">
+          <p>
+            <span>Total</span>
+          </p>
+          <p class="total">$ 560.00</p>
+        </div>
+        <button class="primary-button button-checkout">Checkout</button>
       </div>
     </aside>
     <aside class="product-detail inactive">
       <div class="close-detail">
         <img class="close" src="./Icons/icon_close.png" alt="" />
       </div>
-      <img class="product-img"
-        src="https://images.pexels.com/photos/5783396/pexels-photo-5783396.jpeg?cs=srgb&dl=pexels-anna-khomutova-5783396.jpg&fm=jpg"
-        alt=""
-      />
+      <img class="imgProduct" src="" alt="" />
       <div class="product-info">
         <div class="product-info-details">
-          <p>$ 120,00</p>
-          <p>Cactus</p>
+          <p class="priceProduct"></p>
+          <p class="nameProduct"></p>
           <p>
             With its functional and practical design, this bike also fulfills a
             decorative function, adding personality and a retro-vintage
