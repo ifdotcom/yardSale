@@ -13,7 +13,7 @@ YardSale is a project developed in the Frontend Developer course at Platzi, show
 
 ### Links
 
-- Live Site URL: [yardSale](https://ifdotcom.github.io/mars-rover-photos/html/home.html)
+- Live Site URL: [yardSale](https://ifdotcom.github.io/yardSale/)
 
 ## My process
 
